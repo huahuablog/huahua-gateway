@@ -1,0 +1,16 @@
+SFCS_url =jdbc:oracle:thin:@10.148.202.12:1521:MESQADB
+SFCS_max_conn =10
+SFCS_username =SFCS
+SFCS_password =fdbbcec2e0342952a2913e46c3b86aff
+
+WJ_AE_url =jdbc:oracle:thin:@10.148.202.12:1521:MESQADB
+WJ_AE_max_conn =10
+WJ_AE_username =WJ_AE
+
+WJ_JIT_url =jdbc:oracle:thin:@10.148.202.12:1521:MESQADB
+WJ_JIT_max_conn =10
+WJ_JIT_username =WJ_JIT
+
+WJ_AE_RPT_url =jdbc:oracle:thin:@10.148.202.12:1521:MESQADB
+WJ_AE_RPT_max_conn =10
+WJ_AE_RPT_username =WJ_AE

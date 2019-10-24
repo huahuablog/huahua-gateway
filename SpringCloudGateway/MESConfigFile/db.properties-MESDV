@@ -1,0 +1,13 @@
+SFCS_driver_class=oracle.jdbc.driver.OracleDriver
+SFCS_url = jdbc:oracle:thin:@10.148.202.1:1521:MESDEVDB
+SFCS_max_conn = 10
+SFCS_username = SFCS
+SFCS_password = fdbbcec2e0342952a2913e46c3b86aff
+
+MESDV_url = jdbc:oracle:thin:@10.148.202.1:1521:MESDEVDB
+MESDV_max_conn = 10
+MESDV_username = mesdv
+
+MESDV_RPT_url = jdbc:oracle:thin:@10.148.202.1:1521:MESDEVDB
+MESDV_RPT_max_conn = 10
+MESDV_RPT_username = mesdv

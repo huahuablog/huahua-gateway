@@ -1,0 +1,193 @@
+<c3p0-config> 
+	<default-config>  
+		<property name="user">sfcs</property>
+		<property name="password">fdbbcec2e0342952a2913e46c3b86aff</property>
+		<property name="driverClass">oracle.jdbc.driver.OracleDriver</property>
+         <property name="jdbcUrl">jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.2.1.6)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 10.2.1.7)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 10.2.1.8)(PORT = 1521))(LOAD_BALANCE = yes)(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = DGSFDB)(FAILOVER_MODE=(TYPE=SELECT)(METHOD=BASIC)(RETRIES=180)(DELAY=5))))</property>
+         <property name="initialPoolSize">2</property>
+		<property name="maxIdleTime">60</property>
+		<property name="maxPoolSize">5</property>
+		<property name="minPoolSize">2</property>
+		<property name="maxStatements">0</property>
+		<property name="maxStatementsPerConnection">100</property>
+		<property name="acquireRetryAttempts">3</property>
+		<!--重連失敗後，不再自動嘗試連接 -->
+		<property name="breakAfterAcquireFailure">true</property>
+    </default-config>
+	
+	<named-config name="DG_POW"> 
+		<property name="user">dg_pow</property>
+		<property name="driverClass">oracle.jdbc.driver.OracleDriver</property> 
+	     <property name="jdbcUrl">jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.2.1.6)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 10.2.1.7)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 10.2.1.8)(PORT = 1521))(LOAD_BALANCE = yes)(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = DGSFDB)(FAILOVER_MODE=(TYPE=SELECT)(METHOD=BASIC)(RETRIES=180)(DELAY=5))))</property>
+         <property name="initialPoolSize">3</property>
+		<property name="maxIdleTime">60</property>
+		<property name="maxPoolSize">15</property>
+		<property name="minPoolSize">3</property>
+		<property name="maxStatements">0</property>
+		<property name="maxStatementsPerConnection">100</property>
+		<!--定义在从数据库获取新连接失败后重复尝试的次数。Default: 30 -->
+		<property name="acquireRetryAttempts">3</property>
+		<property name="breakAfterAcquireFailure">true</property>
+	</named-config>
+
+	<named-config name="DG_FAN"> 
+		<property name="user">dg_fan</property>
+		<property name="driverClass">oracle.jdbc.driver.OracleDriver</property> 
+		<property name="jdbcUrl">jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.2.1.6)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 10.2.1.7)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 10.2.1.8)(PORT = 1521))(LOAD_BALANCE = yes)(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = DGSFDB)(FAILOVER_MODE=(TYPE=SELECT)(METHOD=BASIC)(RETRIES=180)(DELAY=5))))</property>
+        <property name="initialPoolSize">3</property>
+		<property name="maxIdleTime">60</property>
+		<property name="maxPoolSize">10</property>
+		<property name="minPoolSize">3</property>
+		<property name="maxStatements">0</property>
+		<property name="maxStatementsPerConnection">100</property>
+		<property name="acquireRetryAttempts">3</property>
+	</named-config>
+	
+
+	<named-config name="SFISM4"> 
+		<property name="user">sfism4</property>
+		<property name="driverClass">oracle.jdbc.driver.OracleDriver</property> 
+		<property name="jdbcUrl">jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.2.1.44)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.2.1.45)(PORT=1521))(LOAD_BALANCE=yes))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=DNISFIS)(FAILOVER_MODE=(TYPE=SELECT)(METHOD=BASIC)(RETRIES=180)(DELAY=5))))</property>
+		<property name="initialPoolSize">3</property>
+		<property name="maxIdleTime">60</property>
+		<property name="maxPoolSize">10</property>
+		<property name="minPoolSize">3</property>
+		<property name="maxStatements">0</property>
+		<property name="maxStatementsPerConnection">100</property>
+		<property name="acquireRetryAttempts">3</property>
+	</named-config>
+
+		<named-config name="JIT"> 
+		<property name="user">JIT</property>
+		<property name="driverClass">oracle.jdbc.driver.OracleDriver</property> 
+	     <property name="jdbcUrl">jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.2.1.6)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 10.2.1.7)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 10.2.1.8)(PORT = 1521))(LOAD_BALANCE = yes)(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = DGSFDB)(FAILOVER_MODE=(TYPE=SELECT)(METHOD=BASIC)(RETRIES=180)(DELAY=5))))</property>
+         <property name="initialPoolSize">3</property>
+		<property name="maxIdleTime">60</property>
+		<property name="maxPoolSize">15</property>
+		<property name="minPoolSize">3</property>
+		<property name="maxStatements">0</property>
+		<property name="maxStatementsPerConnection">100</property>
+		<!--定义在从数据库获取新连接失败后重复尝试的次数。Default: 30 -->
+		<property name="acquireRetryAttempts">3</property>
+		<property name="breakAfterAcquireFailure">true</property>
+	</named-config>
+
+       
+	<!--Report環境，Name必須是生產Schema後面加_RPT，如 'DG_POW_RPT'  -->
+	<named-config name="MESDV_RPT"> 
+		<property name="user">mesdv</property>
+		<property name="driverClass">oracle.jdbc.driver.OracleDriver</property> 
+		<property name="jdbcUrl">jdbc:oracle:thin:@172.17.37.29:1522:mesdvnew</property> 
+		<property name="initialPoolSize">2</property>
+		<property name="maxIdleTime">60</property>
+		<property name="maxPoolSize">10</property>
+		<property name="minPoolSize">2</property>
+		<property name="maxStatements">0</property>
+		<property name="maxStatementsPerConnection">100</property>
+		<!--定义在从数据库获取新连接失败后重复尝试的次数。Default: 30 -->
+		<property name="acquireRetryAttempts">2</property>
+	</named-config>
+
+	 <named-config name="DG_POW_RPT">
+                <property name="user">DG_POW</property>
+                <property name="driverClass">oracle.jdbc.driver.OracleDriver</property>
+               <property name="jdbcUrl">jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS=(PROTOCOL=TCP)(HOST=172.17.37.164)(PORT = 1522))(ADDRESS=(PROTOCOL=TCP)(HOST=172.17.37.165)(PORT = 1522)))(LOAD_BALANCE = yes)(CONNECT_DATA=(SERVER = DEDICATED)(SERVICE_NAME = DGSFRPT)))</property>
+                <property name="initialPoolSize">3</property>
+                <property name="maxIdleTime">60</property>
+                <property name="maxPoolSize">15</property>
+                <property name="minPoolSize">3</property>
+                <property name="maxStatements">0</property>
+                <property name="maxStatementsPerConnection">100</property>
+                <!--定义在从数据库获取新连接失败后重复尝试的次数。Default: 30 -->
+                <property name="acquireRetryAttempts">3</property>
+                <property name="breakAfterAcquireFailure">true</property>
+        </named-config>
+
+        <named-config name="DG_FAN_RPT">
+                <property name="user">DG_FAN</property>
+                <property name="driverClass">oracle.jdbc.driver.OracleDriver</property>
+               <property name="jdbcUrl">jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS=(PROTOCOL=TCP)(HOST=172.17.37.164)(PORT = 1522))(ADDRESS=(PROTOCOL=TCP)(HOST=172.17.37.165)(PORT = 1522)))(LOAD_BALANCE = yes)(CONNECT_DATA=(SERVER = DEDICATED)(SERVICE_NAME = DGSFRPT)))</property>
+                <property name="initialPoolSize">3</property>
+                <property name="maxIdleTime">60</property>
+                <property name="maxPoolSize">15</property>
+                <property name="minPoolSize">3</property>
+                <property name="maxStatements">0</property>
+                <property name="maxStatementsPerConnection">100</property>
+                <!--定义在从数据库获取新连接失败后重复尝试的次数。Default: 30 -->
+                <property name="acquireRetryAttempts">3</property>
+                <property name="breakAfterAcquireFailure">true</property>
+        </named-config>
+
+          <named-config name="ELMS">
+                <property name="user">ELMS</property>
+                <property name="driverClass">oracle.jdbc.driver.OracleDriver</property>
+               <property name="jdbcUrl">jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS=(PROTOCOL=TCP)(HOST=172.17.37.164)(PORT = 1522))(ADDRESS=(PROTOCOL=TCP)(HOST=172.17.37.165)(PORT = 1522)))(LOAD_BALANCE = yes)(CONNECT_DATA=(SERVER = DEDICATED)(SERVICE_NAME = DGSFRPT)))</property>
+                <property name="initialPoolSize">3</property>
+                <property name="maxIdleTime">60</property>
+                <property name="maxPoolSize">15</property>
+                <property name="minPoolSize">3</property>
+                <property name="maxStatements">0</property>
+                <property name="maxStatementsPerConnection">100</property>
+                <!--定义在从数据库获取新连接失败后重复尝试的次数。Default: 30 -->
+                <property name="acquireRetryAttempts">3</property>
+                <property name="breakAfterAcquireFailure">true</property>
+        </named-config>
+	
+	<named-config name="DG_DNI_RPT"> 
+		<property name="user">SFISM4</property>
+		<property name="driverClass">oracle.jdbc.driver.OracleDriver</property> 
+		<property name="jdbcUrl">jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 172.17.38.27)(PORT = 1522))(ADDRESS = (PROTOCOL = TCP)(HOST = 172.17.38.28)(PORT = 1522)))(LOAD_BALANCE = yes)(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = DGSFRPDB)))</property>
+		<property name="initialPoolSize">3</property>
+		<property name="maxIdleTime">60</property>
+		<property name="maxPoolSize">15</property>
+		<property name="minPoolSize">3</property>
+		<property name="maxStatements">0</property>
+		<property name="maxStatementsPerConnection">100</property>
+		<!--定义在从数据库获取新连接失败后重复尝试的次数。Default: 30 -->
+		<property name="acquireRetryAttempts">3</property>
+		<property name="breakAfterAcquireFailure">true</property>
+	</named-config>
+
+<named-config name="DSM_POW">
+    <property name="user">dg_pow</property>
+		<property name="driverClass">oracle.jdbc.driver.OracleDriver</property> 
+	    <property name="jdbcUrl">jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.2.1.6)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 10.2.1.7)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 10.2.1.8)(PORT = 1521))(LOAD_BALANCE = yes)(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = DGSFDB)(FAILOVER_MODE=(TYPE=SELECT)(METHOD=BASIC)(RETRIES=180)(DELAY=5))))</property>
+        <property name="initialPoolSize">3</property>
+		<property name="maxIdleTime">60</property>
+		<property name="maxPoolSize">15</property>
+		<property name="minPoolSize">3</property>
+		<property name="maxStatements">0</property>
+		<property name="maxStatementsPerConnection">100</property>
+		<!--定义在从数据库获取新连接失败后重复尝试的次数。Default: 30 -->
+		<property name="acquireRetryAttempts">3</property>
+		<property name="breakAfterAcquireFailure">true</property>
+	</named-config>
+
+<named-config name="DSM_FAN">
+		<property name="user">dg_fan</property>
+		<property name="driverClass">oracle.jdbc.driver.OracleDriver</property> 
+		<property name="jdbcUrl">jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.2.1.6)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 10.2.1.7)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 10.2.1.8)(PORT = 1521))(LOAD_BALANCE = yes)(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = DGSFDB)(FAILOVER_MODE=(TYPE=SELECT)(METHOD=BASIC)(RETRIES=180)(DELAY=5))))</property>
+        <property name="initialPoolSize">3</property>
+		<property name="maxIdleTime">60</property>
+		<property name="maxPoolSize">10</property>
+		<property name="minPoolSize">3</property>
+		<property name="maxStatements">0</property>
+		<property name="maxStatementsPerConnection">100</property>
+		<property name="acquireRetryAttempts">3</property>
+	</named-config>
+
+<named-config name="DSM_DNI">
+		<property name="user">sfism4</property>
+		<property name="driverClass">oracle.jdbc.driver.OracleDriver</property> 
+		<property name="jdbcUrl">jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.2.1.44)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.2.1.45)(PORT=1521))(LOAD_BALANCE=yes))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=DNISFIS)(FAILOVER_MODE=(TYPE=SELECT)(METHOD=BASIC)(RETRIES=180)(DELAY=5))))</property>
+        <property name="initialPoolSize">3</property>
+		<property name="maxIdleTime">60</property>
+		<property name="maxPoolSize">10</property>
+		<property name="minPoolSize">3</property>
+		<property name="maxStatements">0</property>
+		<property name="maxStatementsPerConnection">100</property>
+		<property name="acquireRetryAttempts">3</property>
+	</named-config>
+
+  
+</c3p0-config> 
